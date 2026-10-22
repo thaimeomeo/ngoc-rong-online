@@ -1,0 +1,595 @@
+{
+"field_far": {
+"w": 1080,
+"h": 540
+},
+"field_mid": {
+"w": 1564,
+"h": 300
+},
+"field_ground": {
+"w": 440,
+"h": 220
+},
+"field_plat": {
+"w": 277,
+"h": 96
+},
+"waste_far": {
+"w": 1080,
+"h": 540
+},
+"waste_mid": {
+"w": 1044,
+"h": 300
+},
+"waste_ground": {
+"w": 440,
+"h": 220
+},
+"waste_plat": {
+"w": 257,
+"h": 96
+},
+"namek_far": {
+"w": 1080,
+"h": 540
+},
+"namek_mid": {
+"w": 1248,
+"h": 300
+},
+"namek_ground": {
+"w": 498,
+"h": 220
+},
+"namek_plat": {
+"w": 227,
+"h": 96
+},
+"water": {
+"w": 192,
+"h": 96
+},
+"earth_sheet": [
+{
+"f": "earth_0.png",
+"w": 63,
+"h": 92
+},
+{
+"f": "earth_1.png",
+"w": 60,
+"h": 92
+},
+{
+"f": "earth_2.png",
+"w": 57,
+"h": 94
+},
+{
+"f": "earth_3.png",
+"w": 85,
+"h": 92
+},
+{
+"f": "earth_4.png",
+"w": 82,
+"h": 85
+},
+{
+"f": "earth_5.png",
+"w": 77,
+"h": 85
+},
+{
+"f": "earth_6.png",
+"w": 92,
+"h": 61
+},
+{
+"f": "earth_7.png",
+"w": 83,
+"h": 88
+}
+],
+"saiyan_sheet": [
+{
+"f": "saiyan_0.png",
+"w": 60,
+"h": 92
+},
+{
+"f": "saiyan_1.png",
+"w": 60,
+"h": 92
+},
+{
+"f": "saiyan_2.png",
+"w": 60,
+"h": 92
+},
+{
+"f": "saiyan_3.png",
+"w": 81,
+"h": 92
+},
+{
+"f": "saiyan_4.png",
+"w": 81,
+"h": 87
+},
+{
+"f": "saiyan_5.png",
+"w": 74,
+"h": 88
+},
+{
+"f": "saiyan_6.png",
+"w": 85,
+"h": 74
+},
+{
+"f": "saiyan_7.png",
+"w": 74,
+"h": 83
+}
+],
+"namek_sheet": [
+{
+"f": "namek_0.png",
+"w": 72,
+"h": 92
+},
+{
+"f": "namek_1.png",
+"w": 77,
+"h": 92
+},
+{
+"f": "namek_2.png",
+"w": 77,
+"h": 92
+},
+{
+"f": "namek_3.png",
+"w": 87,
+"h": 92
+},
+{
+"f": "namek_4.png",
+"w": 83,
+"h": 88
+},
+{
+"f": "namek_5.png",
+"w": 80,
+"h": 88
+},
+{
+"f": "namek_6.png",
+"w": 92,
+"h": 59
+},
+{
+"f": "namek_7.png",
+"w": 74,
+"h": 87
+}
+],
+"dino_sheet": [
+{
+"f": "dino_0.png",
+"w": 117,
+"h": 84
+},
+{
+"f": "dino_1.png",
+"w": 117,
+"h": 84
+},
+{
+"f": "dino_2.png",
+"w": 119,
+"h": 88
+},
+{
+"f": "dino_3.png",
+"w": 104,
+"h": 84
+}
+],
+"bandit_sheet": [
+{
+"f": "bandit_0.png",
+"w": 91,
+"h": 92
+},
+{
+"f": "bandit_1.png",
+"w": 92,
+"h": 92
+},
+{
+"f": "bandit_2.png",
+"w": 90,
+"h": 114
+},
+{
+"f": "bandit_3.png",
+"w": 89,
+"h": 88
+}
+],
+"bat_sheet": [
+{
+"f": "bat_0.png",
+"w": 59,
+"h": 60
+},
+{
+"f": "bat_1.png",
+"w": 57,
+"h": 48
+},
+{
+"f": "bat_2.png",
+"w": 59,
+"h": 67
+},
+{
+"f": "bat_3.png",
+"w": 57,
+"h": 52
+}
+],
+"portraits": [
+{
+"f": "portraits_0.png",
+"w": 91,
+"h": 96
+},
+{
+"f": "portraits_1.png",
+"w": 68,
+"h": 96
+},
+{
+"f": "portraits_2.png",
+"w": 86,
+"h": 96
+}
+],
+"items": [
+{
+"f": "items_0.png",
+"w": 48,
+"h": 44
+},
+{
+"f": "items_1.png",
+"w": 48,
+"h": 43
+},
+{
+"f": "items_2.png",
+"w": 48,
+"h": 47
+},
+{
+"f": "items_3.png",
+"w": 48,
+"h": 38
+},
+{
+"f": "items_4.png",
+"w": 48,
+"h": 44
+},
+{
+"f": "items_5.png",
+"w": 48,
+"h": 37
+},
+{
+"f": "items_6.png",
+"w": 46,
+"h": 48
+},
+{
+"f": "items_7.png",
+"w": 48,
+"h": 48
+}
+],
+"signpost": [
+{
+"f": "signpost_0.png",
+"w": 173,
+"h": 110
+}
+],
+"ssj_sheet": [
+{
+"f": "ssj_0.png",
+"w": 62,
+"h": 92
+},
+{
+"f": "ssj_1.png",
+"w": 61,
+"h": 92
+},
+{
+"f": "ssj_2.png",
+"w": 60,
+"h": 92
+},
+{
+"f": "ssj_3.png",
+"w": 80,
+"h": 92
+},
+{
+"f": "ssj_4.png",
+"w": 80,
+"h": 87
+},
+{
+"f": "ssj_5.png",
+"w": 73,
+"h": 88
+},
+{
+"f": "ssj_6.png",
+"w": 84,
+"h": 75
+},
+{
+"f": "ssj_7.png",
+"w": 74,
+"h": 84
+}
+],
+"garden": [
+{
+"f": "garden_0.png",
+"w": 85,
+"h": 80
+},
+{
+"f": "garden_1.png",
+"w": 85,
+"h": 101
+},
+{
+"f": "garden_2.png",
+"w": 85,
+"h": 186
+},
+{
+"f": "garden_3.png",
+"w": 93,
+"h": 310
+}
+],
+"kamesign": [
+{
+"f": "kamesign_0.png",
+"w": 115,
+"h": 120
+}
+],
+"boss_field_sheet": [
+{
+"f": "boss_field_0.png",
+"w": 138,
+"h": 150
+},
+{
+"f": "boss_field_1.png",
+"w": 149,
+"h": 151
+},
+{
+"f": "boss_field_2.png",
+"w": 160,
+"h": 157
+},
+{
+"f": "boss_field_3.png",
+"w": 123,
+"h": 144
+}
+],
+"boss_waste_sheet": [
+{
+"f": "boss_waste_0.png",
+"w": 132,
+"h": 150
+},
+{
+"f": "boss_waste_1.png",
+"w": 131,
+"h": 144
+},
+{
+"f": "boss_waste_2.png",
+"w": 136,
+"h": 196
+},
+{
+"f": "boss_waste_3.png",
+"w": 142,
+"h": 144
+}
+],
+"boss_namek_sheet": [
+{
+"f": "boss_namek_0.png",
+"w": 75,
+"h": 130
+},
+{
+"f": "boss_namek_1.png",
+"w": 69,
+"h": 133
+},
+{
+"f": "boss_namek_2.png",
+"w": 124,
+"h": 127
+},
+{
+"f": "boss_namek_3.png",
+"w": 83,
+"h": 125
+}
+],
+"npc_sheet": [
+{
+"f": "npc_0.png",
+"w": 72,
+"h": 96
+},
+{
+"f": "npc_1.png",
+"w": 80,
+"h": 101
+},
+{
+"f": "npc_2.png",
+"w": 61,
+"h": 103
+},
+{
+"f": "npc_3.png",
+"w": 77,
+"h": 100
+},
+{
+"f": "npc_4.png",
+"w": 72,
+"h": 92
+},
+{
+"f": "npc_5.png",
+"w": 70,
+"h": 95
+}
+],
+"shopitems": [
+{
+"f": "shopitems_0.png",
+"w": 33,
+"h": 48
+},
+{
+"f": "shopitems_1.png",
+"w": 36,
+"h": 48
+},
+{
+"f": "shopitems_2.png",
+"w": 34,
+"h": 48
+},
+{
+"f": "shopitems_3.png",
+"w": 40,
+"h": 48
+},
+{
+"f": "shopitems_4.png",
+"w": 37,
+"h": 48
+},
+{
+"f": "shopitems_5.png",
+"w": 36,
+"h": 48
+}
+],
+"grind_far": {
+"w": 1080,
+"h": 540
+},
+"grind_mid": {
+"w": 2412,
+"h": 300
+},
+"grind_ground": {
+"w": 440,
+"h": 220
+},
+"grind_plat": {
+"w": 346,
+"h": 96
+},
+"arena_far": {
+"w": 1080,
+"h": 540
+},
+"arena_mid": {
+"w": 1532,
+"h": 300
+},
+"arena_ground": {
+"w": 440,
+"h": 220
+},
+"arena_plat": {
+"w": 228,
+"h": 96
+},
+"saiba_sheet": [
+{
+"f": "saiba_0.png",
+"w": 56,
+"h": 80
+},
+{
+"f": "saiba_1.png",
+"w": 51,
+"h": 81
+},
+{
+"f": "saiba_3.png",
+"w": 88,
+"h": 73
+},
+{
+"f": "saiba_2.png",
+"w": 52,
+"h": 80
+}
+],
+"arena_npc_sheet": [
+{
+"f": "arena_npc_0.png",
+"w": 79,
+"h": 100
+},
+{
+"f": "arena_npc_1.png",
+"w": 78,
+"h": 102
+}
+],
+"home_far": {
+"w": 1080,
+"h": 540
+},
+"home_mid": {
+"w": 1878,
+"h": 300
+},
+"home_ground": {
+"w": 440,
+"h": 220
+},
+"home_plat": {
+"w": 251,
+"h": 96
+}
+}
