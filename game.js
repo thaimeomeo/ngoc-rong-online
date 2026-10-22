@@ -854,7 +854,7 @@ class Select extends Phaser.Scene {
       this.hits.add(x - colW / 2, hillTop - 70, colW, 80, () => { this.sel = k; this.layout(); }, 'char');
     });
     // header
-    const title = mkText(this, UW / 2, 4, 'KI REALM', 20, '#FFE14D', this.textRes).setOrigin(0.5, 0);
+    const title = mkText(this, UW / 2, 4, 'APPLE DRA', 20, '#FFE14D', this.textRes).setOrigin(0.5, 0);
     const sub = mkText(this, UW / 2, 26, 'Choose your race', 9, '#ffffff', this.textRes).setOrigin(0.5, 0);
     this.texts.push(title, sub);
     // info panel
