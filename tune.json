@@ -1,0 +1,254 @@
+{
+  "walk_speed": {
+    "value": 220,
+    "min": 50,
+    "max": 220,
+    "step": 5,
+    "label": "Walk speed"
+  },
+  "jump_power": {
+    "value": 450,
+    "min": 200,
+    "max": 450,
+    "step": 10,
+    "label": "Jump power"
+  },
+  "gravity": {
+    "value": 820,
+    "min": 400,
+    "max": 1400,
+    "step": 20,
+    "label": "Gravity"
+  },
+  "fly_speed": {
+    "value": 260,
+    "min": 60,
+    "max": 260,
+    "step": 5,
+    "label": "Flight speed"
+  },
+  "fly_drain": {
+    "value": 7,
+    "min": 0,
+    "max": 30,
+    "step": 0.5,
+    "label": "Ki drained per second flying"
+  },
+  "ki_regen": {
+    "value": 3,
+    "min": 0,
+    "max": 15,
+    "step": 0.5,
+    "label": "Ki regen % per second"
+  },
+  "points_per_level": {
+    "value": 20,
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "label": "Potential points per level"
+  },
+  "exp_rate": {
+    "value": 5,
+    "min": 0.25,
+    "max": 5,
+    "step": 0.25,
+    "label": "EXP multiplier"
+  },
+  "gold_rate": {
+    "value": 1,
+    "min": 0.25,
+    "max": 5,
+    "step": 0.25,
+    "label": "Gold multiplier"
+  },
+  "bean_stage_seconds": {
+    "value": 40,
+    "min": 5,
+    "max": 600,
+    "step": 5,
+    "label": "Seconds per bean growth stage"
+  },
+  "start_beans": {
+    "value": 3,
+    "min": 0,
+    "max": 20,
+    "step": 1,
+    "label": "Beans at start"
+  },
+  "monsters": {
+    "value": 9,
+    "min": 3,
+    "max": 16,
+    "step": 1,
+    "label": "Monsters per area"
+  },
+  "respawn_seconds": {
+    "value": 6,
+    "min": 1,
+    "max": 60,
+    "step": 1,
+    "label": "Monster respawn seconds"
+  },
+  "monster_power": {
+    "value": 1,
+    "min": 0.3,
+    "max": 3,
+    "step": 0.1,
+    "label": "Monster strength"
+  },
+  "transform_seconds": {
+    "value": 60,
+    "min": 5,
+    "max": 60,
+    "step": 1,
+    "label": "Transform duration"
+  },
+  "waste_level": {
+    "value": 6,
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "label": "Level to enter Wasteland"
+  },
+  "namek_level": {
+    "value": 10,
+    "min": 1,
+    "max": 40,
+    "step": 1,
+    "label": "Level to enter Namek"
+  },
+  "music": {
+    "value": true,
+    "label": "Music"
+  },
+  "player_name_color": {
+    "value": "#ffe14d",
+    "kind": "color",
+    "label": "Own name colour"
+  },
+  "monster_name_color": {
+    "value": "#ff6a4a",
+    "kind": "color",
+    "label": "Monster name colour"
+  },
+  "hud_scale": {
+    "value": 1.15,
+    "min": 0.8,
+    "max": 1.6,
+    "step": 0.05,
+    "label": "HUD size"
+  },
+  "mon_drop_chance": {
+    "value": 0.1,
+    "min": 0,
+    "max": 1,
+    "step": 0.01,
+    "label": "Monster loot chance"
+  },
+  "boss_drop_chance": {
+    "value": 0.7,
+    "min": 0,
+    "max": 1,
+    "step": 0.05,
+    "label": "Boss rare drop chance"
+  },
+  "boss_respawn_seconds": {
+    "value": 75,
+    "min": 10,
+    "max": 600,
+    "step": 5,
+    "label": "Boss respawn seconds"
+  },
+  "potion_price": {
+    "value": 15,
+    "min": 1,
+    "max": 500,
+    "step": 1,
+    "label": "Health Potion price"
+  },
+  "charm_price": {
+    "value": 45,
+    "min": 1,
+    "max": 1000,
+    "step": 1,
+    "label": "Power Charm price"
+  },
+  "charm_seconds": {
+    "value": 60,
+    "min": 5,
+    "max": 600,
+    "step": 5,
+    "label": "Power Charm duration (s)"
+  },
+  "grind_level": {
+    "value": 15,
+    "min": 1,
+    "max": 40,
+    "step": 1,
+    "label": "Level to enter Grinding Zone"
+  },
+  "grind_monsters": {
+    "value": 14,
+    "min": 3,
+    "max": 24,
+    "step": 1,
+    "label": "Monsters in Grinding Zone"
+  },
+  "grind_respawn": {
+    "value": 3,
+    "min": 1,
+    "max": 30,
+    "step": 0.5,
+    "label": "Grinding Zone respawn seconds"
+  },
+  "arena_level": {
+    "value": 20,
+    "min": 1,
+    "max": 40,
+    "step": 1,
+    "label": "Level to enter Tournament"
+  },
+  "arena_level_step": {
+    "value": 2,
+    "min": 1,
+    "max": 5,
+    "step": 1,
+    "label": "Opponent levels gained per round"
+  },
+  "arena_hp_mul": {
+    "value": 0.35,
+    "min": 0.1,
+    "max": 1,
+    "step": 0.05,
+    "label": "Opponent HP multiplier"
+  },
+  "arena_atk_mul": {
+    "value": 0.55,
+    "min": 0.1,
+    "max": 1,
+    "step": 0.05,
+    "label": "Opponent Attack multiplier"
+  },
+  "board_price": {
+    "value": 800,
+    "min": 50,
+    "max": 10000,
+    "step": 50,
+    "label": "Hoverboard price"
+  },
+  "home_width": {
+    "value": 1400,
+    "min": 800,
+    "max": 2600,
+    "step": 100,
+    "label": "Home map width"
+  },
+  "chest_rare_chance": {
+    "value": 0.05,
+    "min": 0,
+    "max": 1,
+    "step": 0.01,
+    "label": "Reward Chest rare Dragon Ball chance"
+  }
+}
