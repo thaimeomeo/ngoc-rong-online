@@ -3,7 +3,7 @@
 'use strict';
 const MB = () => window.mindblown;
 const DPR = Math.min(2, window.devicePixelRatio || 1);
-const VIEW_H = 270;          // world units visible vertically in landscape
+const VIEW_H = 270;          // world units visiblae vertically in landscape
 const GY = 260;              // ground top (world y, down positive)
 let LW = 2600;               // level width (per-biome; see levelWidth)
 const ARENA = 640;           // flat boss arena at the far end
@@ -566,40 +566,90 @@ function makeItem(lv, o = {}) {
 const slotOf = (k) => SLOTS.find((s) => s.k === k);
 
 /* ---------------------------------------------------------------- sdk helpers */
+const SAVE_KEY = 'kirealm_save_v1';
+
 function sdk(fn) { try { const m = MB(); if (m) return fn(m); } catch (e) { console.warn(e); } }
+
+function loadLocal() {
+  try {
+    const raw = localStorage.getItem(SAVE_KEY) || localStorage.getItem('kirealm_dev');
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) {
+    console.warn('LocalStorage load failed:', e);
+    return null;
+  }
+}
+
+function saveLocal(data) {
+  if (!data) return;
+  try {
+    localStorage.setItem(SAVE_KEY, JSON.stringify(data));
+    localStorage.setItem('kirealm_dev', JSON.stringify(data));
+  } catch (e) {
+    console.warn('LocalStorage save failed:', e);
+  }
+}
+
 async function loadProgress() {
+  const localData = loadLocal();
   const m = MB();
   if (m && m.load) {
-    try { const r = await m.load('progress'); saveMeta.loaded = true; saveMeta.scope = r && r.scope; return r && r.value; }
-    catch (e) { console.warn('load failed', e); saveMeta.loadError = e; return null; }
+    try {
+      const r = await m.load('progress');
+      saveMeta.loaded = true;
+      saveMeta.scope = r && r.scope;
+      const cloudData = r && r.value;
+      // So sánh: Nếu có cả dữ liệu Cloud và Local, ưu tiên bản có Level hoặc EXP cao hơn
+      if (cloudData && localData) {
+        if ((localData.lv || 1) > (cloudData.lv || 1) || ((localData.lv === cloudData.lv) && (localData.exp || 0) >= (cloudData.exp || 0))) {
+          return localData;
+        }
+        return cloudData;
+      }
+      return cloudData || localData;
+    } catch (e) {
+      console.warn('Cloud load failed, using localStorage', e);
+      saveMeta.loadError = e;
+      return localData;
+    }
   }
-  try { return JSON.parse(localStorage.getItem('kirealm_dev') || 'null'); } catch (e) { return null; }
+  return localData;
 }
+
 async function saveProgress(force) {
   if (!S) return;
+  // LUÔN LUÔN lưu ngay lập tức vào localStorage của trình duyệt
+  saveLocal(S);
+
   saveMeta.dirty = true;
   if (saveMeta.busy && !force) return;
   const m = MB();
-  if (!(m && m.save)) { try { localStorage.setItem('kirealm_dev', JSON.stringify(S)); } catch (e) {} saveMeta.dirty = false; return; }
+  if (!(m && m.save)) {
+    saveMeta.dirty = false;
+    return;
+  }
   saveMeta.busy = true;
   try {
     if (!saveMeta.loaded) { await m.load('progress'); saveMeta.loaded = true; }
-    await m.save('progress', S); saveMeta.dirty = false;
+    await m.save('progress', S);
+    saveMeta.dirty = false;
   } catch (e) {
     const why = e && e.reason;
     if (why === 'REVISION_CONFLICT' || why === 'LOAD_FIRST' || why === 'AUTH_CHANGED') {
       try {
         const cur = await m.load('progress');
-        if (cur && cur.value && cur.value.lv > S.lv && cur.value.race === S.race) { /* newer elsewhere: keep higher progress */
+        if (cur && cur.value && cur.value.lv > S.lv && cur.value.race === S.race) {
           Object.assign(S, cur.value);
-        } else { await m.save('progress', S); }
+          saveLocal(S);
+        } else {
+          await m.save('progress', S);
+        }
         saveMeta.dirty = false;
       } catch (e2) { console.warn('save retry failed', e2); }
     } else console.warn('save failed', e);
   }
   saveMeta.busy = false;
 }
-
 /* ---------------------------------------------------------------- audio */
 const SFX = ['roar', 'hit', 'kick', 'kiblast', 'beam', 'pop', 'coin', 'item', 'levelup', 'jump', 'transform', 'bean', 'hurt', 'die', 'click', 'bell'];
 let soundOn = true, music = null, flyLoop = null, game = null;
@@ -1691,7 +1741,7 @@ class World extends Phaser.Scene {
     this.drawFx(dt);
     for (const w of this.waters || []) w.tilePositionX += dt * 12;
     // periodic save & network
-    this.saveT += dt; if (this.saveT > 25) { this.saveT = 0; if (saveMeta.dirty || true) saveProgress(); }
+    this.saveT += dt; if (this.saveT > 5) { this.saveT = 0; if (saveMeta.dirty || true) saveProgress(); }
     this.netT -= dt; if (this.netT <= 0) { this.netT = 1.4; this.net(); }
   }
   collide(b, prevY) {
@@ -3811,7 +3861,8 @@ async function boot() {
   const resize = () => { game.scale.resize(Math.round(innerWidth * DPR), Math.round(innerHeight * DPR)); game.scale.setZoom(1 / DPR); };
   addEventListener('resize', resize);
   addEventListener('orientationchange', () => setTimeout(resize, 200));
-  document.addEventListener('visibilitychange', () => { if (document.hidden && S) saveProgress(); });
+ document.addEventListener('visibilitychange', () => { if (document.hidden && S) saveProgress(true); });
+  addEventListener('beforeunload', () => { if (S) saveLocal(S); });
   game.sound.once('unlocked', () => { if (W && W.biome) setMusic(W.biome); });
   addEventListener('pagehide', () => { if (W && W.p && !W.p.dead && W.runT) { sdk((mb) => mb.run && mb.run.end({ seconds: Math.round((performance.now() - W.runT) / 1000), level: S.lv, kills: W.runKills })); W.runT = 0; } });
   if (m && m.viewer && m.viewer.onchange) m.viewer.onchange(() => { if (W && W.p && W.p.tag) W.p.tag.setText(playerName()); });
